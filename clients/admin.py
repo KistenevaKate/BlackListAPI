@@ -1,8 +1,8 @@
 from django.contrib import admin
 
 from .models import Clients
-from .models import Phone
-from .models import ClientsPhone
+from .models import ContactType
+from .models import ClientsContacts
 
 class ClientAdmin(admin.ModelAdmin):
     list_display = ('firstName', 'lastName')
@@ -10,6 +10,6 @@ class ClientAdmin(admin.ModelAdmin):
     search_fields = ('title', 'content')
 
 admin.site.register(Clients, ClientAdmin)
-admin.site.register(Phone)
-admin.site.register(ClientsPhone)
+admin.site.register(ContactType)
+admin.site.register(ClientsContacts)
 # Register your models here.
