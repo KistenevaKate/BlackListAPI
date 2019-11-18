@@ -1,0 +1,66 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+
+<!-- page content -->
+<div class="right_col" role="main">
+   
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 ">
+        <div class="dashboard_graph">
+
+            <div class="row x_title">
+              <div class="col-md-12">
+                <h3>Контактные лица <small>компаний</small></h3>
+              </div>
+            </div>
+              <div class="table-responsive">
+                <table class="table table-striped jambo_table bulk_action">
+                  <thead>
+                    <tr class="headings">
+                     
+                      <th class="column-title">Фамилия</th>
+                      <th class="column-title">Имя </th>
+                      <th class="column-title">Телефон </th>
+                      <th class="column-title">Почта </th>
+                      <th class="column-title">Компания </th>
+                      <th class="column-title no-link last"><span class="nobr">Action</span>
+                      </th>
+                      <th class="bulk-actions" colspan="7">
+                        <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                      </th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+
+                    <tr class="even pointer">
+                    {% for client in clients %}
+                      <td>{{client.lastName}}</td>
+                      <td>{{client.firstName}}</td>
+                      <td>{{client.phone}}</td>
+                      <td>{{client.email}}</td>
+                      <td>None</td>
+                      <td>None</td>
+                      {% endfor %}
+                    </tr>
+                   
+              
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        
+        
+
+    
+    
+
+   
+
+      </br>
+  </div>
+  <!-- /page content -->
+{% endblock %}
