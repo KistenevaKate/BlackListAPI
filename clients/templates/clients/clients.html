@@ -35,16 +35,18 @@
 
                   <tbody>
 
-                    <tr class="even pointer">
+                    
                     {% for client in clients %}
+                    <tr class="even pointer">
                       <td>{{client.lastName}}</td>
                       <td>{{client.firstName}}</td>
                       <td>{{client.phone}}</td>
                       <td>{{client.email}}</td>
                       <td>None</td>
                       <td>None</td>
-                      {% endfor %}
                     </tr>
+                      {% endfor %}
+                  
                    
               
                   </tbody>
