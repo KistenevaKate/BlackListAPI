@@ -1,9 +1,7 @@
 from django.shortcuts import render
-from .models import Clients
 
 def clientsView(request):
-    clients = Clients.objects.all()
-    return render(request, 'clients/clients.html', {'clients':clients})
+    return render(request, 'clients/clients.html', {})
 
 def companiesView(request):
     return render(request, 'clients/company.html', {})
