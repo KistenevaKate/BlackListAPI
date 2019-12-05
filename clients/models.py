@@ -31,8 +31,8 @@ class Comment_client(models.Model):
     create_date = models.DateField(auto_now_add=True)
 
     class Meta:
-        verbose_name_plural ="Статусы клиентов"
-        verbose_name = "Статус клиента"
+        verbose_name_plural ="Коментарии о клиентах"
+        verbose_name = "Коментарий о клиенте"
 
 
 class Task_Manager(models.Model):
@@ -43,10 +43,10 @@ class Task_Manager(models.Model):
     data_begin = models.DateTimeField(default = timezone.now)
     data_end = models.DateTimeField()
     type_task = (
-        ('DO','DONE'),
-        ('PL','PLANE'),
-        ('CA','CANCEL'),
-        ('MO','MOVE'),
+        ('DO','Выполнено'),
+        ('PL','Заполанирована'),
+        ('CA','Отменено'),
+        ('MO','Перенесено'),
     )
     status_task = models.CharField(max_length = 10, choices =type_task, default ='DO')
 

@@ -20,15 +20,15 @@
                   <thead>
                     <tr class="headings">
                      
-                      <th class="column-title">Фамилия</th>
-                      <th class="column-title">Имя </th>
+                      <th class="column-title">ФИО</th>
                       <th class="column-title">Телефон </th>
                       <th class="column-title">Почта </th>
-                      <th class="column-title">Компания </th>
-                      <th class="column-title no-link last"><span class="nobr">Action</span>
+                    
+                      <th class="column-title no-link last"><span class="nobr">Статус</span>
                       </th>
                       <th class="bulk-actions" colspan="7">
                         <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                        <td>Действия</td>
                       </th>
                     </tr>
                   </thead>
@@ -38,11 +38,11 @@
                     
                     {% for client in clients %}
                     <tr class="even pointer">
-                      <td>{{client.lastName}}</td>
-                      <td>{{client.firstName}}</td>
-                      <td>{{client.phone}}</td>
+                      <td>{{client.fio}}</td>
+                      <td>{{client.telephone}}</td>
                       <td>{{client.email}}</td>
-                      <td>None</td>
+                    
+                      <td>{{client.status_client.name}}</td>
                       <td>None</td>
                     </tr>
                       {% endfor %}
