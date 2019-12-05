@@ -35,3 +35,32 @@ class Comment_client(models.Model):
         verbose_name = "Статус клиента"
 
 
+class Task_Manager(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    client = models.ForeignKey('Client', on_delete=models.CASCADE)
+    name = models.CharField(max_length = 100)
+    description = models.CharField(max_length = 100)
+    data_begin = models.DateTimeField(default = timezone.now)
+    data_end = models.DateTimeField()
+    type_task = (
+        ('DO','DONE'),
+        ('PL','PLANE'),
+        ('CA','CANCEL'),
+        ('MO','MOVE'),
+    )
+    status_task = models.CharField(max_length = 10, choices =type_task, default ='DO')
+
+
+    class Meta:
+        verbose_name_plural = "Задачи менеджеру"
+        verbose_name = "Задача менеджеру"
+
+class History(models.Model):
+    client = models.ForeignKey('Client', on_delete=models.CASCADE)
+    pole = models.CharField(max_length = 100)
+    value = models.CharField(max_length = 100)
+    data_edit = models.DateTimeField(auto_now_add=True) 
+
+    class Meta:
+        verbose_name_plural = "Истории"
+        verbose_name = "История"
